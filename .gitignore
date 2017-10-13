@@ -1,0 +1,30 @@
+# Project
+dist
+
+# Node
+##############
+node_modules
+
+# NPM
+##############
+npm-debug.log
+
+# Webstorm
+##############
+.idea
+.settings
+
+# Sublime
+##############
+*.sublime-project
+*.sublime-workspace
+
+# Mac OS
+##############
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

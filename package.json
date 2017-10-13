@@ -1,0 +1,37 @@
+{
+    "name": "events",
+    "version": "1.0.0",
+    "description": "Voorhoede events livestream pages",
+    "main": "index.js",
+    "scripts": {
+        "prebuild": "rimraf dist/ && mkdir dist/",
+        "build": "run-s build:*",
+        "start": "npm run build && npm run server",
+        "server": "http-server './dist/' -c-1 -p 8000",
+        "build:assets": "ncp src/assets/ dist/assets",
+        "build:css": "ncp src/assets/css/index.css dist/assets/css/index.css && cleancss -o dist/assets/css/index.css dist/assets/css/index.css",
+        "build:html": "node index.js ./src/events/",
+        "watch": "run-p watch:*",
+        "watch:css": "chokidar 'src/**/*.css' -c 'npm run build:css'",
+        "watch:json": "chokidar 'src/**/*.json' -c 'npm run build:html'",
+        "watch:html": "chokidar 'src/**/*.html' -c 'npm run build:html'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:voorhoede/events.git"
+    },
+    "author": "De Voorhoede (https://voorhoede.nl/)",
+    "homepage": "https://github.com/voorhoede/events#readme",
+    "license": "MIT",
+    "devDependencies": {
+        "chokidar": "1.7.0",
+        "chokidar-cli": "1.2.0",
+        "clean-css-cli": "4.1.10",
+        "http-server": "0.10.0",
+        "moment": "2.18.1",
+        "ncp": "2.0.0",
+        "npm-run-all": "4.1.1",
+        "nunjucks": "3.0.1",
+        "rimraf": "2.6.2"
+    }
+}

@@ -10,6 +10,12 @@ This repository creates the livestream pages for our events.
 $ npm start
 ```
 
+### Start watcher
+
+```bash
+$ npm run watch
+```
+
 ### Setting up a page for a new event
 
 1. In the `events` directory, create a new `.json` file.
